@@ -15,7 +15,7 @@ jobs:
         with:
           channel: beta
       - run: flutter pub get
-      - run: flutter test
+      - run: flutter test --platform chrome
       - run: flutter build web
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
