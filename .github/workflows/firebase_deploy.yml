@@ -15,7 +15,7 @@ jobs:
         with:
           channel: beta
       - run: flutter pub get
-      - run: flutter test
+      - run: flutter test --platform chrome
       - run: flutter build web
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
@@ -40,3 +40,4 @@ jobs:
           args: deploy --only hosting --public build/web
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
